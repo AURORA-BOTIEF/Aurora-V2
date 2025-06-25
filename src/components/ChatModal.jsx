@@ -1,4 +1,3 @@
-// src/components/ChatModal.jsx
 import './ChatModal.css';
 import { useState } from 'react';
 
@@ -75,9 +74,16 @@ function ChatModal({ token }) {
     }
   };
 
+  const toggleChat = () => {
+    if (!visible) {
+      cargarHistorial();
+    }
+    setVisible(!visible);
+  };
+
   return (
     <>
-      <button id="abrirChat" onClick={() => { setVisible(true); cargarHistorial(); }}>🤖</button>
+      <button id="abrirChat" onClick={toggleChat}>🤖</button>
       <div id="modalChat" className={visible ? 'show' : ''}>
         <header>
           <strong>A U R O R A</strong>

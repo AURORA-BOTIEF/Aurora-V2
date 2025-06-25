@@ -62,6 +62,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 
 .circle {
@@ -91,4 +92,49 @@
   color: white;
   font-weight: 500;
   text-align: center;
+}
+
+/* BURBUJAS ADICIONALES */
+
+.burbujas {
+  position: relative;
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+.burbuja {
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  border: 2px solid #1b5784;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  position: absolute;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Posición de las burbujas alrededor del círculo */
+.burbuja:nth-child(1) {
+  top: -50px;
+  left: 15px;
+}
+
+.burbuja:nth-child(2) {
+  top: 15px;
+  left: 55px;
+}
+
+.burbuja:nth-child(3) {
+  top: 55px;
+  left: 15px;
+}
+
+/* Mostrar burbujas al pasar el mouse por el step */
+.step:hover .burbujas {
+  display: block;
 }
